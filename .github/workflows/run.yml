@@ -1,0 +1,23 @@
+name: test
+
+on:
+  push:
+  pull_request:
+  watch:
+    types: [ started ]
+  schedule:
+    - cron: "33 */12 * * *"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: checkin
+        env:
+          COOKIE: ${{ secrets.COOKIE }}
+          SCKEY: ${{ secrets.SCKEY }}
+        run: |
+          ./checkin.sh
