@@ -44,7 +44,7 @@ def get_leftdays():
     
 # 查询大乐透开奖
 def get_lotteryres(num):
-    url = "https://webapi.sporttery.cn/gateway/lottery/getDigitalDrawInfoV1.qry?param=85%2C0&isVerify=1"
+    url = "https://webapi.sporttery.cn/gateway/lottery/getDigitalDrawInfoV1.qry?param=85,0&isVerify=1"
     httpRes = requests.get(url)
     print(type(httpRes))
     print(httpRes)
