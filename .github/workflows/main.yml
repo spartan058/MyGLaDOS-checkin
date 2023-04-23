@@ -32,10 +32,6 @@ jobs:
       APP_SECRET: ${{ secrets.APP_SECRET }}
       USER_ID: ${{ secrets.USER_ID }}
       TEMPLATE_ID: ${{ secrets.TEMPLATE_ID }}
-      CITY: ${{ secrets.CITY }}
-      START_DATE: ${{ secrets.START_DATE }}
-      SOLARY: ${{ secrets.SOLARY }}
-      BIRTHDAY: ${{ secrets.BIRTHDAY }}
       COOKIE: ${{ secrets.COOKIE }}
       LOTTERYNUM: ${{ secrets.LOTTERYNUM }}
 
