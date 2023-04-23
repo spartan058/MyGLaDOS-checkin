@@ -2,6 +2,7 @@
 import os
 import requests
 import json
+import re
 
 from datetime import date, datetime, timezone, timedelta
 from wechatpy import WeChatClient
@@ -63,7 +64,7 @@ def get_lotteryres(num):
         # 中奖等级
         'lotteryDrawLevel': '未中奖',
         # 中奖金额
-        'lotteryDrawTime': '未中奖'
+        'lotteryDrawBonus': '未中奖'
     }
 
     # 中奖情况
