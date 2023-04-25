@@ -49,7 +49,7 @@ def get_lotteryres(num):
     httpRes = requests.get(url)
     print('====================================== This is my print start ======================================')
     print(type(httpRes))
-    print(httpRes)
+    print(httpRes.status_code)
     print('====================================== This is my print end ========================================')
     res = json.loads(httpRes.text)
     lotteryres = res['value']['dlt']
