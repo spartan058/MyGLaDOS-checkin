@@ -47,8 +47,10 @@ def get_leftdays():
 def get_lotteryres(num):
     url = "https://webapi.sporttery.cn/gateway/lottery/getDigitalDrawInfoV1.qry?param=85,0&isVerify=1"
     httpRes = requests.get(url)
+    print('====================================== This is my print start ======================================')
     print(type(httpRes))
     print(httpRes)
+    print('====================================== This is my print end ========================================')
     res = json.loads(httpRes.text)
     lotteryres = res['value']['dlt']
     
