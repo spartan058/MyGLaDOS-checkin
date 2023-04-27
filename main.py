@@ -46,12 +46,16 @@ def get_leftdays():
 # 查询大乐透开奖
 def get_lotteryres(num):
     url = "https://webapi.sporttery.cn/gateway/lottery/getDigitalDrawInfoV1.qry?param=85,0&isVerify=1"
-    httpRes = requests.get(url)
-    print('====================================== This is my print start ======================================')
-    print(type(httpRes))
-    print(httpRes.status_code)
-    print('====================================== This is my print end ========================================')
-    res = json.loads(httpRes.text)
+    try:
+        print('====================================== There is a Error start ======================================')
+        httpRes = requests.get(url)
+        print('====================================== There is a Error end ========================================')
+    except Exception r, httpRes:
+        print("http status code is {0}".format(httpRes.status_code))
+        print("http response content is {0}".format(httpRes.content))
+        print("http response text is {0}".format(httpRes.text))
+        time.sleep(10)
+    res = httpRes.json()
     lotteryres = res['value']['dlt']
     
     result = {
