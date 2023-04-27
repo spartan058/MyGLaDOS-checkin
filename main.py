@@ -50,10 +50,11 @@ def get_lotteryres(num):
         print('====================================== There is a Error start ======================================')
         httpRes = requests.get(url)
         print('====================================== There is a Error end ========================================')
-    except Exception as r, httpRes:
-        print("http status code is {0}".format(httpRes.status_code))
-        print("http response content is {0}".format(httpRes.content))
-        print("http response text is {0}".format(httpRes.text))
+    except Exception r:
+        print(r.args)
+        # print("http status code is {0}".format(httpRes.status_code))
+        # print("http response content is {0}".format(httpRes.content))
+        # print("http response text is {0}".format(httpRes.text))
         time.sleep(10)
     res = httpRes.json()
     lotteryres = res['value']['dlt']
